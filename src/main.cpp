@@ -7,7 +7,7 @@
 #include <cstdlib>
 #include <map>
 #include <iomanip>
-
+#include <limits>
 #include "toy_memory.hpp"
 
 void merge(std::vector<double> &buffer, int B, int left, int mid, int right)
@@ -246,10 +246,11 @@ int main()
     std::cin >> b;
     std::cout << "Enter positive value for T: ";
     std::cin >> T;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear buffer
     std::cout << "Enter input file path (full path of the input file): ";
-    std::cin >> input_file;
+    std::getline(std::cin, input_file);
     std::cout << "Enter output file path (full path of the output file): ";
-    std::cin >> output_file;
+    std::getline(std::cin, output_file);
     // std::string input_file = "/Users/lakindulehanlithpuramuhandirumge/Documents/CSCI2100A_24P2/inputs/inputs.txt";
     // std::string output_file = "/Users/lakindulehanlithpuramuhandirumge/Documents/CSCI2100A_24P2/outputs/sorted.txt";
     external_merge_sort(B, b, N, T, input_file, output_file);
