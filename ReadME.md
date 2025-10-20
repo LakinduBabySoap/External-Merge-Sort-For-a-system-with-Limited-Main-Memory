@@ -1,4 +1,4 @@
-# External Merge Sort Implementation  for Limited Memoery 
+# External Merge Sort Implementation  for Limited Memory 
 
 ## Project Overview
 
